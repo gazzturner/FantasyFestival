@@ -5,7 +5,7 @@
 
 	<div>
     Budget: £{{budget.toLocaleString()}}
-    <h2>Selected Bands</h2>
+    <h2>Selected Artists</h2>
     <h3>Money left: £{{amountRemaining.toLocaleString()}}</h3>
     <ul>
       <li v-for="band, index in selectedBands">
@@ -16,11 +16,12 @@
     </ul>
   </div>
 
-  <div class="search-wrapper">
-    <input type="text" v-model="searchTerm" placeholder="Search artist.."/>
-  </div>
+  
   <div>
-    <h2>Bands</h2>
+    <h2>Artists</h2>
+    <div class="search-wrapper">
+      <input type="text" v-model="searchTerm" placeholder="Search artist.."/>
+    </div>
     <ul>
       <li v-for="band, index in availableBands">
         <div id="band" class="bands">
@@ -37,7 +38,7 @@
 <script src="https://unpkg.com/vue"></script>
 
 <script>
-const app = new Vue({
+  const app = new Vue({
 		el: '#app',
 		data: {
 			bands: [
