@@ -5,7 +5,6 @@
 
 	<div>
     Budget: £{{budget.toLocaleString()}}
-    <h2 style="color: red;">{{errorMessage}}</h2>
     <h2>Selected Bands</h2>
     <h3>Money left: £{{amountRemaining.toLocaleString()}}</h3>
     <ul>
@@ -23,18 +22,14 @@
     <ul>
       <li v-for="band, index in filteredItems" v-if="!band.selected">
         <div id="band" class="bands">
-          {{ band.name }} | Cost: £{{band.price.toLocaleString()}} 
-            <button 
-              v-on:click="addBandToSelection(band, index)" 
-              :disabled="disableAddButton"
-            >+</button>
+          {{ band.name }} | Cost: £{{band.price.toLocaleString()}} <button v-on:click="addBandToSelection(band, index)">+</button>
         </div>
       </li>
     </ul>
   </div>
 	</div>
 </main>
-	
+
 </div>
 
 <script src="https://unpkg.com/vue"></script>
@@ -54,34 +49,25 @@ const app = new Vue({
       amountSpent: 0,
       amountRemaining: 100000000,
       errorMessage: '',
-      searchTerm: '',
-      numberOfBandsAllowed: 1,
-      disableAddButton: false
+      searchTerm: ''
 		},
 		methods: {
       addBandToSelection(band, index) {
         if(this.selectedBands.includes(band)){
-          this.errorMessage = band.name + "have/has already been selected";
-          return;
-        }
-        if(this.amountRemaining - band.price < 0){
-          this.errorMessage = "Adding " + band.name + " will take you over budget!";
+          this.errorMessage = "Band has already been selected";
           return;
         }
         this.selectedBands.push(band);
         this.amountRemaining -= band.price;
         this.amountSpent += band.price;
         this.bands[index].selected = true;
-        this.disableAddButton = this.selectedBands.length >= this.numberOfBandsAllowed;
 			},
       removeBandFromSelection(band, index) {
-        errorMessage = "";
         this.selectedBands.pop(band);
         this.amountRemaining += band.price;
         this.amountSpent -= band.price;
         this.bands[index].selected = false;
-        this.disableAddButton = this.selectedBands.length >= this.numberOfBandsAllowed;
-			}
+			},
     },
     computed: {
       filteredItems() {
@@ -89,7 +75,7 @@ const app = new Vue({
         let orderedBands = this.bands;
         orderedBands = orderedBands.sort((a, b) => {
           let fa = a.name.toLowerCase(), fb = b.name.toLowerCase()
-    
+
           if (fa < fb) {
             return -1
           }
