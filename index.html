@@ -20,40 +20,17 @@
   <div>
     <h2>Bands</h2>
     <input type="text" v-model="searchTerm">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Artist</th>
-          <th>Price</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="band, index in filteredItems" v-if="!band.selected">
-           <th scope="row">{{ band.name  }}</th>  
-           <td>Cost: £{{band.price.toLocaleString()}}</td> 
-           <td> <a href="band.imageUrl" target="blank"><img v-bind:src="band.imageUrl" alt="Image for artist" /></a></td>  
-           <td>            <button 
-            v-on:click="addBandToSelection(band, index)" 
-            :disabled="disableAddButton"
-          >+</button></td>
-        </tr>
-       </tbody>
-    </table>
-
-    <!-- <ul>
+    <ul>
       <li v-for="band, index in filteredItems" v-if="!band.selected">
         <div id="band" class="bands">
           {{ band.name }} | Cost: £{{band.price.toLocaleString()}} 
-          <img v-bind:src="band.imageUrl" alt="Image for artist" />
             <button 
               v-on:click="addBandToSelection(band, index)" 
               :disabled="disableAddButton"
             >+</button>
         </div>
       </li>
-    </ul> -->
+    </ul>
   </div>
 	</div>
 </main>
@@ -67,7 +44,7 @@ const app = new Vue({
 		el: '#app',
 		data: {
 			bands: [
-				{ "id": 1, "name": 'Slipknot', "price": 10000000, "selected": false, "imageUrl": 'https://www.rollingstone.com/wp-content/uploads/2019/08/slipknot.jpg' },
+				{ "id": 1, "name": 'Slipknot', "price": 10000000, "selected": false },
 				{ "id": 2, "name": 'Alter Bridge', "price": 5000000, "selected": false  },
 				{ "id": 3, "name": 'Rihanna', "price": 7500000, "selected": false  },
 				{ "id": 4, "name": 'Backstreet Boys', "price": 9000000, "selected": false  }
@@ -133,8 +110,4 @@ const app = new Vue({
 </script>
 
 <style>
-  img {
-    width:100px;
-    height: 100px;
-  }
 </style>
