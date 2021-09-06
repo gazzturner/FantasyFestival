@@ -41,15 +41,226 @@
   const app = new Vue({
 		el: '#app',
 		data: {
-			bands: [
-				{ "id":1, "name": 'Slipknot', "price": 10000000, "selected": false, "position": 0 },
-				{ "id":2, "name": 'Alter Bridge', "price": 5000000, "selected": false, "position": 0  },
-				{ "id":3, "name": 'Rihanna', "price": 7500000, "selected": false, "position": 0 },
-				{ "id":4, "name": 'Backstreet Boys', "price": 9000000, "selected": false, "position": 0 }
-			],
-      budget: 100000000,
+			bands: [{
+					"id": 1,
+					"name": "A Day To Remember",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 2,
+					"name": "Alter Bridge",
+					"price": 12,
+					"selected": false
+				    },
+				    {
+					"id": 3,
+					"name": "Biffy Clyro",
+					"price": 15,
+					"selected": false
+				    },
+				    {
+					"id": 4,
+					"name": "Black Label Society",
+					"price": 8,
+					"selected": false
+				    },
+				    {
+					"id": 5,
+					"name": "Black Veil Brides",
+					"price": 8,
+					"selected": false
+				    },
+				    {
+					"id": 6,
+					"name": "Bury Tomorrow",
+					"price": 8,
+					"selected": false
+				    },
+				    {
+					"id": 7,
+					"name": "Catfish and the Bottlemen",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 8,
+					"name": "Deftones",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 9,
+					"name": "Frank Carter and the Rattlesnakes",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 10,
+					"name": "Gerry Cinnamon",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 11,
+					"name": "Iron Maiden",
+					"price": 15,
+					"selected": false
+				    },
+				    {
+					"id": 12,
+					"name": "Killswitch Engage",
+					"price": 12,
+					"selected": false
+				    },
+				    {
+					"id": 13,
+					"name": "Kiss",
+					"price": 15,
+					"selected": false
+				    },
+				    {
+					"id": 14,
+					"name": "Korn",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 15,
+					"name": "Liam Gallagher",
+					"price": 12,
+					"selected": false
+				    },
+				    {
+					"id": 16,
+					"name": "Monster Truck",
+					"price": 5,
+					"selected": false
+				    },
+				    {
+					"id": 17,
+					"name": "Myles Kennedy",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 18,
+					"name": "Post Malone",
+					"price": 12,
+					"selected": false
+				    },
+				    {
+					"id": 19,
+					"name": "PowerWolf",
+					"price": 5,
+					"selected": false
+				    },
+				    {
+					"id": 20,
+					"name": "Rise Against",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 21,
+					"name": "Sam Fender",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 22,
+					"name": "Shinedown",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 23,
+					"name": "Slash and Myles Kennedy",
+					"price": 12,
+					"selected": false
+				    },
+				    {
+					"id": 24,
+					"name": "Slipknot",
+					"price": 15,
+					"selected": false
+				    },
+				    {
+					"id": 25,
+					"name": "Steel Panther",
+					"price": 12,
+					"selected": false
+				    },
+				    {
+					"id": 26,
+					"name": "Stormzy",
+					"price": 12,
+					"selected": false
+				    },
+				    {
+					"id": 27,
+					"name": "System of a Down",
+					"price": 15,
+					"selected": false
+				    },
+				    {
+					"id": 28,
+					"name": "The Darkness",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 29,
+					"name": "The Distillers",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 30,
+					"name": "The Pretty Reckless",
+					"price": 8,
+					"selected": false
+				    },
+				    {
+					"id": 31,
+					"name": "The Raven Age",
+					"price": 5,
+					"selected": false
+				    },
+				    {
+					"id": 32,
+					"name": "Theory",
+					"price": 8,
+					"selected": false
+				    },
+				    {
+					"id": 33,
+					"name": "Those Damn Crows",
+					"price": 5,
+					"selected": false
+				    },
+				    {
+					"id": 34,
+					"name": "Volbeat",
+					"price": 10,
+					"selected": false
+				    },
+				    {
+					"id": 35,
+					"name": "Wargasm",
+					"price": 5,
+					"selected": false
+				    },
+				    {
+					"id": 36,
+					"name": "Wayward Sons",
+					"price": 5,
+					"selected": false
+				    }
+			       ],
+      budget: 100,
       amountSpent: 0,
-      amountRemaining: 100000000,
+      amountRemaining: 100,
       errorMessage: '',
       searchTerm: '',
       nextPosition: 1,
